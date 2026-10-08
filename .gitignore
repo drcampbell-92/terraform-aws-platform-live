@@ -6,3 +6,4 @@ backend.hcl
 tfplan
 crash.log
 *.zip
+*.zip
