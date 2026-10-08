@@ -32,6 +32,7 @@ module "status_page" {
 
   name_prefix = local.name_prefix
   page_title  = "Uptime prod status"
+  force_destroy = true
 }
 
 module "monitor" {
