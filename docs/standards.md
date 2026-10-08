@@ -11,7 +11,7 @@ Every resource carries these tags, applied through provider `default_tags`.
 | Tag | Example | Purpose |
 |---|---|---|
 | `Project` | `uptime-platform` | Groups all platform resources |
-| `Environment` | `dev` or `prod` | Separates environments for cost and access |
+| `Environment` | `dev`, `prod`, or `shared` | Separates environments for cost and access; `shared` is for bootstrap resources |
 | `Owner` | `platform-team` | Who to contact |
 | `ManagedBy` | `terraform` | Signals that console changes will be overwritten |
 | `Repository` | `terraform-aws-platform-live` | Where the code lives |
