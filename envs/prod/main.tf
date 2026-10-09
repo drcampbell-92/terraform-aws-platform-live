@@ -1,7 +1,7 @@
 locals {
   name_prefix    = "uptime-prod"
   module_source  = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules"
-  module_version = "v1.0.0"
+  module_version = "v1.0.1"
 
   targets = {
     vpc-ec2-project      = "https://github.com/drcampbell-92/terraform-aws-vpc-ec2"
@@ -11,7 +11,7 @@ locals {
 }
 
 module "guardrails" {
-  source = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules/guardrails?ref=v1.0.0"
+  source = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules/guardrails?ref=v1.0.1"
 
   name_prefix         = local.name_prefix
   environment         = "prod"
@@ -20,7 +20,7 @@ module "guardrails" {
 }
 
 module "alerts" {
-  source = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules/alerts?ref=v1.0.0"
+  source = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules/alerts?ref=v1.0.1"
 
   name_prefix            = local.name_prefix
   allowed_publisher_arns = [module.monitor.role_arn]
@@ -28,14 +28,14 @@ module "alerts" {
 }
 
 module "status_page" {
-  source = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules/status-page?ref=v1.0.0"
+  source = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules/status-page?ref=v1.0.1"
 
   name_prefix = local.name_prefix
   page_title  = "Uptime prod status"
 }
 
 module "monitor" {
-  source = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules/monitor?ref=v1.0.0"
+  source = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules/monitor?ref=v1.0.1"
 
   name_prefix                   = local.name_prefix
   targets                       = local.targets
