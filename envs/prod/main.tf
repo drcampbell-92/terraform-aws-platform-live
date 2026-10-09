@@ -1,3 +1,5 @@
+# Module release v1.0.1 includes the aws:PrincipalArn fix.
+
 locals {
   name_prefix    = "uptime-prod"
   module_source  = "git::https://github.com/drcampbell-92/terraform-aws-platform-modules.git//modules"
