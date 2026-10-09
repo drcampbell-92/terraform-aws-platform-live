@@ -29,7 +29,10 @@ resource "aws_iam_role" "plan" {
         Condition = {
           StringEquals = {
             "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
-            "token.actions.githubusercontent.com:sub" = "${local.subject_prefix}:pull_request"
+            "token.actions.githubusercontent.com:sub" = [
+              "${local.subject_prefix}:pull_request",
+              "${local.subject_prefix}:ref:refs/heads/main",
+            ]
           }
         }
       },
