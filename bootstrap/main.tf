@@ -4,7 +4,7 @@ locals {
   account_id     = data.aws_caller_identity.current.account_id
   state_bucket   = "tfstate-${local.account_id}-us-east-1"
   environments   = toset(["dev", "prod"])
-  subject_prefix = "repo:${var.github_repo}"
+  subject_prefix = "repo:${var.github_owner}@${var.github_owner_id}/${var.github_repo}@${var.github_repo_id}"
 }
 
 resource "aws_iam_openid_connect_provider" "github" {
